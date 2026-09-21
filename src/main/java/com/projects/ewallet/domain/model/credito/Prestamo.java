@@ -8,56 +8,71 @@ import java.time.LocalDateTime;
 
 public class Prestamo {
 
+
     private Long id;
-    private Cliente cliente;
-    private ProductoCrediticio productoCrediticio;
-    private BigDecimal amountSuccess;
-    private Integer plazos;
+    private SolicitudCredito solicitudCredito;
+    private BigDecimal montoDesembolsado;
     private BigDecimal tcea;
-    private LocalDateTime fechaDesembolso;
+    private BigDecimal saldoCapital;
     private EstadoPrestamo estado;
 
-    public Prestamo(Long id, Cliente cliente, BigDecimal amountSuccess, BigDecimal tcea, LocalDateTime fechaDesembolso, EstadoPrestamo estado, Integer plazos, ProductoCrediticio productoCrediticio) {
+    public Prestamo(Long id, SolicitudCredito solicitudCredito, BigDecimal montoDesembolsado, BigDecimal tcea, BigDecimal saldoCapital, EstadoPrestamo estado) {
         this.id = id;
-        this.cliente = cliente;
-        this.amountSuccess = amountSuccess;
+        this.solicitudCredito = solicitudCredito;
+        this.montoDesembolsado = montoDesembolsado;
         this.tcea = tcea;
-        this.fechaDesembolso = fechaDesembolso;
+        this.saldoCapital = saldoCapital;
         this.estado = estado;
-        this.plazos = plazos;
-        this.productoCrediticio = productoCrediticio;
     }
+
+    public Prestamo() {}
 
 
     public Long getId() {
         return id;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public ProductoCrediticio getProductoCrediticio() {
-        return productoCrediticio;
+    public SolicitudCredito getSolicitudCredito() {
+        return solicitudCredito;
     }
 
-    public BigDecimal getAmountSuccess() {
-        return amountSuccess;
+    public void setSolicitudCredito(SolicitudCredito solicitudCredito) {
+        this.solicitudCredito = solicitudCredito;
     }
 
-    public Integer getPlazos() {
-        return plazos;
+    public BigDecimal getMontoDesembolsado() {
+        return montoDesembolsado;
+    }
+
+    public void setMontoDesembolsado(BigDecimal montoDesembolsado) {
+        this.montoDesembolsado = montoDesembolsado;
     }
 
     public BigDecimal getTcea() {
         return tcea;
     }
 
-    public LocalDateTime getFechaDesembolso() {
-        return fechaDesembolso;
+    public void setTcea(BigDecimal tcea) {
+        this.tcea = tcea;
     }
 
     public EstadoPrestamo getEstado() {
         return estado;
+    }
+
+    public void setEstado(EstadoPrestamo estado) {
+        this.estado = estado;
+    }
+
+    public BigDecimal getSaldoCapital() {
+        return saldoCapital;
+    }
+
+    public void setSaldoCapital(BigDecimal saldoCapital) {
+        this.saldoCapital = saldoCapital;
     }
 }
